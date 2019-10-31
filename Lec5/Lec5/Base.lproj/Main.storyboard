@@ -27,10 +27,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeQ-zS-Can">
                                                 <rect key="frame" x="0.0" y="0.0" width="175.5" height="205"/>
                                                 <state key="normal" title="Button" image="10_of_clubs.png"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EM0-CE-rt6"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyW-6p-ucS">
                                                 <rect key="frame" x="183.5" y="0.0" width="175.5" height="205"/>
                                                 <state key="normal" title="Button" image="10_of_clubs.png"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vAl-Cn-uU5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -40,10 +46,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFn-k4-LzL">
                                                 <rect key="frame" x="0.0" y="0.0" width="175.5" height="205"/>
                                                 <state key="normal" title="Button" image="10_of_clubs.png"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dcj-4T-ICw"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frP-KD-FeF">
                                                 <rect key="frame" x="183.5" y="0.0" width="175.5" height="205"/>
                                                 <state key="normal" title="Button" image="10_of_clubs.png"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJl-jd-ZyI"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -53,10 +65,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gt-tO-4qF">
                                                 <rect key="frame" x="0.0" y="0.0" width="175.5" height="205"/>
                                                 <state key="normal" title="Button" image="10_of_clubs.png"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0l6-AP-gJB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AjV-In-h5p">
                                                 <rect key="frame" x="183.5" y="0.0" width="175.5" height="205"/>
                                                 <state key="normal" title="Button" image="10_of_clubs.png"/>
+                                                <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pIw-hT-kM5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -72,6 +90,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outletCollection property="memoryCards" destination="YeQ-zS-Can" collectionClass="NSMutableArray" id="IJD-GX-mBT"/>
+                        <outletCollection property="memoryCards" destination="pyW-6p-ucS" collectionClass="NSMutableArray" id="Lh0-LP-IbP"/>
+                        <outletCollection property="memoryCards" destination="wFn-k4-LzL" collectionClass="NSMutableArray" id="crt-U6-yLY"/>
+                        <outletCollection property="memoryCards" destination="frP-KD-FeF" collectionClass="NSMutableArray" id="coX-F8-CwL"/>
+                        <outletCollection property="memoryCards" destination="5gt-tO-4qF" collectionClass="NSMutableArray" id="8to-RR-7nl"/>
+                        <outletCollection property="memoryCards" destination="AjV-In-h5p" collectionClass="NSMutableArray" id="hHO-cq-G7A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
