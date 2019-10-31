@@ -11,11 +11,11 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var memoryCards: [UIButton]!
     
+    //previous card?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
         initGame()
     }
     
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         for _ in 0..<3{
             //0 to paths.count
             let rand = Int.random(in: 0..<paths.count)
-            let randPath = paths[rand]
+            let randPath = paths.remove(at: rand)
             
             //optional image -> maybe there is no image under the given path
             let image = UIImage(contentsOfFile: randPath)
@@ -44,18 +44,11 @@ class ViewController: UIViewController {
         
         imagesForGame = imagesForGame + imagesForGame // [] = [] + []
         imagesForGame.shuffle()
-        
-        
-        //fill the game cards in the buttons
-//        for i in 0..<imagesForGame.count{
-//            memoryCards[i].setImage(imagesForGame[i], for: .highlighted)
-//        }
-//
+
         //same as the solution above.
         for(image, btn) in zip(imagesForGame, memoryCards){
             btn.setImage(image, for: .highlighted)
         }
-        //given: imagesForGame
     }
 
     
@@ -66,6 +59,5 @@ class ViewController: UIViewController {
         //set the image for the normal state
         sender.setImage(img, for: .normal)
     }
- 
-}
+ }
 
