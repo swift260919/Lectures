@@ -15,16 +15,55 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //et.addTextWatcher(this)
+//        first.delegate = self
     }
     
+    @IBAction func editingChanged(_ sender: UITextField) {
+         print(sender.text!)
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
         //tell all the textFields to resign
-        hideKeyboard(view: view)
+        //hideKeyboard(view: view)
+        view.endEditing(true)
     }
 }
- 
+
+
+//protocol extension
+
+extension ViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let text = textField.text
+        
+        let count = text?.count ?? 0
+        
+        
+        //digits only
+        
+        
+        return count < 3
+        
+//        if count < 3{
+//            return true
+//        }else{
+//            return false
+//        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+
+
 extension UIViewController{
     func hideKeyboard(view:UIView){
         for child in view.subviews{
