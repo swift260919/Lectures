@@ -41,7 +41,6 @@ class ViewController: UIViewController {
         //https://nsdateformatter.com/
         formatter.dateFormat = "dd/MM/yyyy"
         
-        
         //String from date
         let dString = formatter.string(from: Date())
         print(dString)
