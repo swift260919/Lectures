@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func editingChanged(_ sender: UITextField) {
-         print(sender.text!)
+         //print(sender.text!)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -39,21 +39,17 @@ class ViewController: UIViewController {
 extension ViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let text = textField.text
         
-        let count = text?.count ?? 0
+        let text = textField.text!
         
+        //wanted
+        let allowedCharacters = CharacterSet(charactersIn: "0123456789")
+        //given
+        let userSet = CharacterSet(charactersIn: string)
         
-        //digits only
+        //print("Replacement:  \(string)" )
+        return allowedCharacters.isSuperset(of: userSet) && text.count < 3 || string.isEmpty
         
-        
-        return count < 3
-        
-//        if count < 3{
-//            return true
-//        }else{
-//            return false
-//        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

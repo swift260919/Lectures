@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="DZz-V9-PU9">
-                                <rect key="frame" x="16" y="477" width="343" height="174"/>
+                                <rect key="frame" x="16" y="36" width="343" height="174"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GPv-mQ-BPB">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -58,7 +58,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DZz-V9-PU9" secondAttribute="bottom" constant="16" id="Iw8-Ix-pho"/>
+                            <constraint firstItem="DZz-V9-PU9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="GNd-lj-xjM"/>
                             <constraint firstItem="DZz-V9-PU9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dIV-io-r3P"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DZz-V9-PU9" secondAttribute="trailing" constant="16" id="dzw-Ka-6DO"/>
                         </constraints>
