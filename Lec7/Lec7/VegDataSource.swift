@@ -14,7 +14,6 @@ struct VegDataSource  {
     //with a Vegtable(name:, color:, image:)
     //]
     var vegtables = [
-        
         Vegtable(name: "Tomato",
                  color: "Red",
                  image: UIImage(named: "tomato")
@@ -34,8 +33,22 @@ struct VegDataSource  {
         Vegtable(name: "Corn",
                  color: "Yellow",
                  image: UIImage(named: "corn")
+        ),
+        Vegtable(name: "Eggplant",
+                 color: "Brown",
+                 image: UIImage(named: "eggplant")
+        ),
+        Vegtable(name: "Paprika",
+                 color: "red",
+                 image: UIImage(named: "paprika")
+        ),
+        Vegtable(name: "Zucchini",
+                 color: "green",
+                 image: UIImage(named: "zucchini")
+        ),
+        Vegtable(name: "Pumpkin",
+                 color: "orange",
+                 image: UIImage(named: "pumpkin")
         )
-        
-        
     ]
 }
