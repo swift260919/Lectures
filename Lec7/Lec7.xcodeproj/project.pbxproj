@@ -14,6 +14,7 @@
 		6D0677CF2373FB99007BA3BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0677CD2373FB99007BA3BE /* LaunchScreen.storyboard */; };
 		6D0677D92373FF2C007BA3BE /* Vegtable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0677D82373FF2C007BA3BE /* Vegtable.swift */; };
 		6D0677DB2373FFC3007BA3BE /* VegDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0677DA2373FFC3007BA3BE /* VegDataSource.swift */; };
+		6D0677DD23740AED007BA3BE /* VegCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0677DC23740AED007BA3BE /* VegCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6D0677D02373FB99007BA3BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D0677D82373FF2C007BA3BE /* Vegtable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vegtable.swift; sourceTree = "<group>"; };
 		6D0677DA2373FFC3007BA3BE /* VegDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegDataSource.swift; sourceTree = "<group>"; };
+		6D0677DC23740AED007BA3BE /* VegCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				6D0677D02373FB99007BA3BE /* Info.plist */,
 				6D0677D82373FF2C007BA3BE /* Vegtable.swift */,
 				6D0677DA2373FFC3007BA3BE /* VegDataSource.swift */,
+				6D0677DC23740AED007BA3BE /* VegCellTableViewCell.swift */,
 			);
 			path = Lec7;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				6D0677C72373FB98007BA3BE /* ViewController.swift in Sources */,
 				6D0677D92373FF2C007BA3BE /* Vegtable.swift in Sources */,
 				6D0677C52373FB97007BA3BE /* AppDelegate.swift in Sources */,
+				6D0677DD23740AED007BA3BE /* VegCellTableViewCell.swift in Sources */,
 				6D0677DB2373FFC3007BA3BE /* VegDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

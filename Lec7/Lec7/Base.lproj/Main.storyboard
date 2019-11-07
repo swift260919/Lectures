@@ -18,60 +18,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gz7-Yk-fbJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k4C-WX-KXS">
                                 <rect key="frame" x="8" y="28" width="359" height="631"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="vegcell" textLabel="3sB-Yf-dVx" detailTextLabel="H4l-5t-s9D" imageView="r8p-VA-nUS" style="IBUITableViewCellStyleSubtitle" id="PFu-kz-7wL">
-                                        <rect key="frame" x="0.0" y="28" width="359" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="vegcell" rowHeight="177" id="0Dg-fd-XYp" customClass="VegCellTableViewCell" customModule="Lec7" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="359" height="177"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PFu-kz-7wL" id="QKI-zn-YjQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Dg-fd-XYp" id="VxS-ba-yyL">
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="176.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3sB-Yf-dVx">
-                                                    <rect key="frame" x="74" y="5" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avocado" translatesAutoresizingMaskIntoConstraints="NO" id="eEA-QX-CjX">
+                                                    <rect key="frame" x="15" y="11" width="329" height="96"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWA-wJ-3xu">
+                                                    <rect key="frame" x="158.5" y="145" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H4l-5t-s9D">
-                                                    <rect key="frame" x="74" y="25.5" width="33" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="icons8-tomato" id="r8p-VA-nUS">
-                                                    <rect key="frame" x="15" y="0.0" width="44" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OWA-wJ-3xu" firstAttribute="bottom" secondItem="VxS-ba-yyL" secondAttribute="bottomMargin" id="XHs-0t-Yte"/>
+                                                <constraint firstItem="eEA-QX-CjX" firstAttribute="trailing" secondItem="VxS-ba-yyL" secondAttribute="trailingMargin" id="jvm-Vg-fTw"/>
+                                                <constraint firstItem="eEA-QX-CjX" firstAttribute="top" secondItem="VxS-ba-yyL" secondAttribute="topMargin" id="qSz-N2-CUr"/>
+                                                <constraint firstItem="eEA-QX-CjX" firstAttribute="leading" secondItem="VxS-ba-yyL" secondAttribute="leadingMargin" id="x4S-yJ-lAF"/>
+                                                <constraint firstItem="OWA-wJ-3xu" firstAttribute="centerX" secondItem="VxS-ba-yyL" secondAttribute="centerX" id="yRo-jo-9hg"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="vegImageView" destination="eEA-QX-CjX" id="Kuq-8u-Giz"/>
+                                            <outlet property="vegLabel" destination="OWA-wJ-3xu" id="x9z-Hd-VqT"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0LH-e2-zwf"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Sd6-Wr-Qhb"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="oPu-tj-CGp"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gBY-2u-dng"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Gz7-Yk-fbJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="3Ga-BB-Wmi"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gz7-Yk-fbJ" secondAttribute="bottom" constant="8" id="B2i-qK-D4I"/>
-                            <constraint firstItem="Gz7-Yk-fbJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="VfU-ik-sUg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gz7-Yk-fbJ" secondAttribute="trailing" constant="8" id="yrk-p1-rEU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="k4C-WX-KXS" secondAttribute="bottom" constant="8" id="Xms-G0-Xwd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="k4C-WX-KXS" secondAttribute="trailing" constant="8" id="b3L-s2-oUV"/>
+                            <constraint firstItem="k4C-WX-KXS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="br9-9N-YVj"/>
+                            <constraint firstItem="k4C-WX-KXS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="not-YN-RDA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="37.600000000000001" y="26.53673163418291"/>
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-tomato" width="96" height="96"/>
+        <image name="avocado" width="96" height="96"/>
     </resources>
 </document>
