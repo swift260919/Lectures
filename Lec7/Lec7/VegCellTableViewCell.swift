@@ -11,7 +11,7 @@ import UIKit
 
 //cache the findViewByTag
 class VegCellTableViewCell: UITableViewCell {
- //ref to your views
+    //ref to your views
     @IBOutlet weak var vegImageView: UIImageView!
     
     @IBOutlet weak var vegLabel: UILabel!
