@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     func dateFormatter(){
         let picker = UIPickerView()
         let r = picker.selectedRow(inComponent: 0)
+        
         //arr[0][r]
         
         let formatter = DateFormatter()
