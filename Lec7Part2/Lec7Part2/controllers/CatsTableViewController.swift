@@ -23,8 +23,15 @@ class CatsTableViewController: UITableViewController {
         //how to add barButton items from code
         //        navigationItem.leftBarButtonItem =
         //            UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(tappedCamera(_:)))
+        
+        self.refreshControl?.addTarget(self, action: #selector(mrefresh(_:)), for: .valueChanged)
     }
     
+    
+    @objc func mrefresh(_ sender: UIRefreshControl){
+        //go web, fetch json, compare ->, 
+        self.refreshControl?.endRefreshing()
+    }
     
     @objc func tappedCamera(_ sender: UIBarButtonItem){
         print("Camera")
@@ -91,6 +98,17 @@ class CatsTableViewController: UITableViewController {
         ds.animals[to.section].insert(from, at: to.row)
     }
     
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let action = UITableViewRowAction(style: .default, title: "Oh No") { (action, indexPath) in
+            print("depreacted")
+            
+        }
+        
+        action.backgroundColor = UIColor.orange
+        
+        return [action]
+    }
     
     
     // Override to support conditional rearranging of the table view.
