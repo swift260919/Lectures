@@ -32,25 +32,32 @@ class CatsTableViewController: UITableViewController {
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return ds.animals.count
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return ds.cats.count
+        return ds.animals[section].count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "catcell", for: indexPath)
         
-        let cat = ds.cats[indexPath.row]
+        
+        let animal = ds.animals[indexPath.section][indexPath.row]
         // Configure the cell...
-        cell.imageView?.image = cat.image
-        cell.textLabel?.text = cat.name
+        cell.imageView?.image = animal.image
+        cell.textLabel?.text = animal.name
         
         cell.detailTextLabel?.isHidden = true
         
         return cell
     }
     
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        let titles = ["Cats" ,"Dogs"]
+        return titles[section]
+    }
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -62,7 +69,7 @@ class CatsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            ds.cats.remove(at: indexPath.row)
+            ds.animals[indexPath.section].remove(at: indexPath.row)
             
             
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -75,9 +82,13 @@ class CatsTableViewController: UITableViewController {
     
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        let temp = ds.cats[fromIndexPath.row]
-        ds.cats[fromIndexPath.row] = ds.cats[to.row]
-        ds.cats[to.row] = temp
+        
+        let from = ds.animals[fromIndexPath.section][fromIndexPath.row]
+        //remove from
+        ds.animals[fromIndexPath.section].remove(at: fromIndexPath.row)
+        
+        //put from in place
+        ds.animals[to.section].insert(from, at: to.row)
     }
     
     
