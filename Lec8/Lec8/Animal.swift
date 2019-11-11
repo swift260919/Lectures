@@ -37,7 +37,6 @@ struct Animal: Codable{
 
 
 func hexStringToUIColor (hex:String) -> UIColor {
-
     //trim spaces and new lines, uppercased
     var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
@@ -65,17 +64,17 @@ func hexStringToUIColor (hex:String) -> UIColor {
 
  
 
-func demo(){
+func demo()-> UIColor{
     var color = "#aabbcc"
        if color.hasPrefix("#"){
            color.remove(at: color.startIndex)
        }
        
-       let r = Int(color.subString(from: 0, to: 1), radix: 16)
-       let g = Int(color.subString(from: 2, to: 3), radix: 16)
-       let b = Int(color.subString(from: 4, to: 5), radix: 16)
+       let r = CGFloat(Int(color.subString(from: 0, to: 1), radix: 16) ?? 0) / 255
+       let g = CGFloat(Int(color.subString(from: 2, to: 3), radix: 16) ?? 0) / 255
+       let b = CGFloat(Int(color.subString(from: 4, to: 5), radix: 16) ?? 0) / 255
     
-    
+    return UIColor(red: r, green: g, blue: b, alpha: 1)
 }
 
 

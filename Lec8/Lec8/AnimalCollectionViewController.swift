@@ -11,9 +11,15 @@ import UIKit
 private let reuseIdentifier = "animalCell"
 
 class AnimalCollectionViewController: UICollectionViewController {
-
+    
+    let animals = AnimalDataSource.shared.getAnimals()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else {return}
+        
+        layout.itemSize = CGSize(width: 200, height: 200)
     }
 
 
@@ -27,14 +33,20 @@ class AnimalCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 100 //100 squares
+        return animals.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AnimalCollectionViewCell
     
         // Configure the cell
-        cell.backgroundColor = UIColor.red
+        
+        let animal = animals[indexPath.item]
+        cell.nameLabel.text = animal.animalName
+        cell.scientificLabel.text = animal.scientificName
+        cell.backgroundColor = animal.uiColor
+        
         return cell
     }
 
@@ -69,4 +81,17 @@ class AnimalCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+
+extension AnimalCollectionViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let collectionViewSize = collectionView.frame.size
+        let colHeight = collectionViewSize.height
+        let colWidth = collectionViewSize.width
+        
+        
+        return CGSize(width: 200, height: 200)
+    }
 }
