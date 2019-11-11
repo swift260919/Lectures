@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        PeopleDataSource.shared.getPeople()
+        let people =  PeopleDataSource.shared.getPeopleCodable()
         
+        
+        print(people)
     }
-
-
 }
 

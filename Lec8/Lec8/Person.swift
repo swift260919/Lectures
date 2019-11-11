@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Person{
+struct Person: Codable{
     //for now we set all the names ==== from JSON
     let id:Int
     let first_name:String
