@@ -48,6 +48,8 @@ class PeopleDataSource{
     func getPeopleCodable()->[Person]{
         guard let url = Bundle.main.url(forResource: "people", withExtension: "json") else {return []}
         
+        var s = 3 > 4 ? "A" : "B"
+        
         
         //read the url as Binary Data
         guard let data = try? Data(contentsOf: url) else {return []}

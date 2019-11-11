@@ -13,10 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        let people =  PeopleDataSource.shared.getPeopleCodable()
+        let animals = AnimalDataSource.shared.getAnimals()
         
-        
-        print(people)
+        print(animals)
     }
 }
 

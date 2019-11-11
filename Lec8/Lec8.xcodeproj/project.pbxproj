@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D0AEAC723796FF700486AC8 /* animals.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D0AEAC623796FF700486AC8 /* animals.json */; };
+		6D0AEAC92379701F00486AC8 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0AEAC82379701F00486AC8 /* Animal.swift */; };
+		6D0AEACB237970B700486AC8 /* AnimalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0AEACA237970B700486AC8 /* AnimalDataSource.swift */; };
+		6D0AEACD23798CA600486AC8 /* AnimalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0AEACC23798CA600486AC8 /* AnimalCollectionViewController.swift */; };
+		6D0AEACF2379903A00486AC8 /* AnimalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0AEACE2379903A00486AC8 /* AnimalCollectionViewCell.swift */; };
 		6D481E55237940FC0048BC2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D481E54237940FC0048BC2E /* AppDelegate.swift */; };
 		6D481E57237940FC0048BC2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D481E56237940FC0048BC2E /* ViewController.swift */; };
 		6D481E5A237940FC0048BC2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D481E58237940FC0048BC2E /* Main.storyboard */; };
@@ -18,6 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D0AEAC623796FF700486AC8 /* animals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animals.json; sourceTree = "<group>"; };
+		6D0AEAC82379701F00486AC8 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		6D0AEACA237970B700486AC8 /* AnimalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDataSource.swift; sourceTree = "<group>"; };
+		6D0AEACC23798CA600486AC8 /* AnimalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCollectionViewController.swift; sourceTree = "<group>"; };
+		6D0AEACE2379903A00486AC8 /* AnimalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCollectionViewCell.swift; sourceTree = "<group>"; };
 		6D481E51237940FC0048BC2E /* Lec8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lec8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D481E54237940FC0048BC2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D481E56237940FC0048BC2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +70,7 @@
 		6D481E53237940FC0048BC2E /* Lec8 */ = {
 			isa = PBXGroup;
 			children = (
+				6D0AEAC623796FF700486AC8 /* animals.json */,
 				6D481E54237940FC0048BC2E /* AppDelegate.swift */,
 				6D481E56237940FC0048BC2E /* ViewController.swift */,
 				6D481E58237940FC0048BC2E /* Main.storyboard */,
@@ -69,6 +80,10 @@
 				6D481E662379423E0048BC2E /* people.json */,
 				6D481E682379431D0048BC2E /* Person.swift */,
 				6D481E6A2379448C0048BC2E /* PeopleDataSource.swift */,
+				6D0AEAC82379701F00486AC8 /* Animal.swift */,
+				6D0AEACA237970B700486AC8 /* AnimalDataSource.swift */,
+				6D0AEACC23798CA600486AC8 /* AnimalCollectionViewController.swift */,
+				6D0AEACE2379903A00486AC8 /* AnimalCollectionViewCell.swift */,
 			);
 			path = Lec8;
 			sourceTree = "<group>";
@@ -131,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D0AEAC723796FF700486AC8 /* animals.json in Resources */,
 				6D481E672379423E0048BC2E /* people.json in Resources */,
 				6D481E5F237940FD0048BC2E /* LaunchScreen.storyboard in Resources */,
 				6D481E5C237940FD0048BC2E /* Assets.xcassets in Resources */,
@@ -147,8 +163,12 @@
 			files = (
 				6D481E692379431D0048BC2E /* Person.swift in Sources */,
 				6D481E6B2379448C0048BC2E /* PeopleDataSource.swift in Sources */,
+				6D0AEACF2379903A00486AC8 /* AnimalCollectionViewCell.swift in Sources */,
+				6D0AEACD23798CA600486AC8 /* AnimalCollectionViewController.swift in Sources */,
+				6D0AEACB237970B700486AC8 /* AnimalDataSource.swift in Sources */,
 				6D481E57237940FC0048BC2E /* ViewController.swift in Sources */,
 				6D481E55237940FC0048BC2E /* AppDelegate.swift in Sources */,
+				6D0AEAC92379701F00486AC8 /* Animal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
