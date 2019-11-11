@@ -15,6 +15,8 @@ class PeopleDataSource{
     private init(){}
     
     func getPeople()-> [Person]{
+        
+        //url for our people.json file //file://users/avi/emulator
         guard let url = Bundle.main.url(forResource: "people", withExtension: "json") else {return []}
         
         //people = new empty array
@@ -22,9 +24,12 @@ class PeopleDataSource{
         
         //fill the array:
         //read the file as binary ( Data )
+        guard let data = try? Data(contentsOf: url) else {return []}
+        //print(data) //8 bytes
         
-        
-        
+        guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []) else {return []}
+                
+        print(jsonObject)
         //return the people array
         return people
     }
