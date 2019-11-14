@@ -7,19 +7,25 @@
 // 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController ,TMDBListener {
+    //1) don't use the UI Thread for Netwroking
+    //2) other threads must not update the UI
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+ 
+        let ds = TMDBDataSource(endPoint: .discoverTV, params: ["sort_by": "popularity_desc"])
+ 
         
         
-        let ds = TMDBDataSource(endPoint: .discoverMovies, params: ["sort_by": "popularity_desc"])
-        
-        
-        ds.sendRequest()
+        ds.sendRequest(listener: self)
     }
 
+    
+    func displayMovies(_ movies: [Movie]){
+        print(movies)
+    }
 
 }
 
