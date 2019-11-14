@@ -15,6 +15,9 @@ class ViewController: UIViewController {
         
         
         let ds = TMDBDataSource(endPoint: .discoverMovies, params: ["sort_by": "popularity_desc"])
+        
+        
+        ds.sendRequest()
     }
 
 

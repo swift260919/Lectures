@@ -13,26 +13,29 @@ class TMDBDataSource{
     ///discover/movie?api_key=e898f9a386bfdb67610421b879360e02&sort_by=popularity.desc
     let endPoint: EndPoint
     var params: [String: Any] //ex: ["sort_by":"popularity.desc"]
-    //todo: init!
+ 
     init(endPoint: EndPoint, params: [String: Any] = [:]){
         self.endPoint = endPoint
         self.params = params
-        
+    }
+
+    func sendRequest(){
         let defaultParams = endPoint.defaultParams.map{"\($0)=\($1)"}.joined(separator: "&")
-        var otherParams = params.map{"\($0)=\($1)"}.joined(separator: "&")
-        
-        
+        let otherParams = params.map{"\($0)=\($1)"}.joined(separator: "&")
         let address = endPoint.path + "?" + defaultParams + "&" + otherParams
-        
         let url = URL(string: address)!
         
-        
-        //	.
+        //tasks start at a suspended state - we need to remember to .resume() them.
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            if let err = err{
+                print(err)
+            }
+            
+            if let data = data{
+                print(data)
+            }
+        }.resume()
     }
-    
-    
-    
-    
     
     
     
