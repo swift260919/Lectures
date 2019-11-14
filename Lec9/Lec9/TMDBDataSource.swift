@@ -18,9 +18,16 @@ class TMDBDataSource{
         self.endPoint = endPoint
         self.params = params
         
-        //todo: String:
-        //https://api.themoviedb.org/3/discover/movie?api_key=e898f9a386bfdb67610421b879360e02&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1
-
+        let defaultParams = endPoint.defaultParams.map{"\($0)=\($1)"}.joined(separator: "&")
+        var otherParams = params.map{"\($0)=\($1)"}.joined(separator: "&")
+        
+        
+        let address = endPoint.path + "?" + defaultParams + "&" + otherParams
+        
+        let url = URL(string: address)!
+        
+        
+        //	.
     }
     
     
@@ -53,8 +60,24 @@ class TMDBDataSource{
                return ["api_key":"e898f9a386bfdb67610421b879360e02"]
            }
            //computed property: (THE ONLY PROPERTY THAT ENUMS MAY HAVE)
-           var base: String {
+           private var base: String {
                return "https://api.themoviedb.org/3"
            }
        }
+}
+
+let url = URL(string: "abc.com") //nil
+
+
+//Failable init
+class Circle {
+    var radius:Double
+    
+    init?(radius: Double){
+        if radius >= 0{
+            self.radius = radius
+        }else{
+            return nil
+        }
+    }
 }

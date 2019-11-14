@@ -12,6 +12,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
+        let ds = TMDBDataSource(endPoint: .discoverMovies, params: ["sort_by": "popularity_desc"])
     }
 
 
