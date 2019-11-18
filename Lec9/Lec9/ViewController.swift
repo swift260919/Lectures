@@ -15,7 +15,7 @@ class ViewController: UIViewController ,TMDBListener {
     override func viewDidLoad() {
         super.viewDidLoad()
  
-        let ds = TMDBDataSource(endPoint: .discoverTV, params: ["sort_by": "popularity_desc"])
+        let ds = TMDBDataSource(endPoint: .discoverMovies)
  
         
         

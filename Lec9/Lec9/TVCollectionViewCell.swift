@@ -9,6 +9,7 @@
 import UIKit
 
 class TVCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var posterImageView: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
     

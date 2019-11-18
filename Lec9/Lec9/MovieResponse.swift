@@ -12,10 +12,21 @@ struct MovieResponse:Codable {
     let results:[Movie]
 }
 
-
+//LRU
 
 //may move to another file
 struct Movie:Codable {
-    let name:String?
-    let poster_path: String?
+    let title:String
+    let poster_path: String
+    
+    var poster:String{
+        return "https://image.tmdb.org/t/p/original\(poster_path)"
+    }
+    
+    init(from decoder:Decoder) throws{
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        title = try values.decode(String.self, forKey: .title)
+        poster_path = try values.decodeIfPresent(String.self, forKey: .poster_path) ?? ""
+    }
 }

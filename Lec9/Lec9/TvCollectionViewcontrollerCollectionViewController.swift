@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 private let reuseIdentifier = "cell"
 
@@ -16,11 +17,12 @@ class TvCollectionViewcontrollerCollectionViewController: UICollectionViewContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TMDBDataSource(endPoint: .discoverTV).sendRequest(listener: self)
+        TMDBDataSource(endPoint: .discoverMovies).sendRequest(listener: self)
     }
 
     func displayMovies(_ movies: [Movie]){
         self.movies = movies
+        print(movies)
         collectionView.reloadData()
     }
     
@@ -53,8 +55,16 @@ class TvCollectionViewcontrollerCollectionViewController: UICollectionViewContro
         
         let movie = movies[indexPath.item]
         // Configure the cell
-        cell.nameLabel.text = movie.name ?? "No Title"
+        cell.nameLabel.text = movie.title
+        //cell.posterImageView.image
         
+        //bind the image:
+        if movie.poster_path.count > 1{
+            let url = URL(string: movie.poster)!
+            
+            //imageView.sd_setImage(with:url)
+            cell.posterImageView.sd_setImage(with: url)
+        }
         return cell
     }
 
@@ -89,4 +99,15 @@ class TvCollectionViewcontrollerCollectionViewController: UICollectionViewContro
     }
     */
 
+}
+extension TvCollectionViewcontrollerCollectionViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let collectionViewSize = collectionView.frame.size
+        let colHeight = collectionViewSize.height
+        let colWidth = collectionViewSize.width
+        
+        
+        return CGSize(width: 200, height: 200)
+    }
 }
