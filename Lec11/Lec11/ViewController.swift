@@ -10,23 +10,75 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var blurView: UIVisualEffectView!
+    @IBOutlet weak var bottom: NSLayoutConstraint!
     
-    
-    
-    @IBAction func dismiss(_ sender: UIButton) {
-        dialogView.removeFromSuperview()
-        blurView.isHidden = true
+    @IBAction func animateConstraints(_ sender: UIButton) {
+       //change the constant:
+       self.bottom.constant = 100
+        
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 15, options: [], animations: {
+            //let the changes be animated
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet var dialogView: UIView!
+    
+    @IBAction func dismiss(_ sender: UIButton) {
+        //findViewByID
+        guard let btn = self.view.viewWithTag(5) else {return}
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            //animate
+            btn.transform = CGAffineTransform.identity
+            
+            self.dialogView.center = CGPoint(x: self.view.center.x, y: -300)
+            self.blurView.isHidden = true
+        }) { (completed) in
+            //done animating:
+            self.dialogView.removeFromSuperview()
+        }
+    }
+
     @IBAction func showCustom(_ sender: UIButton) {
+        //transformation:
+        //rotate, scale, translation
+     
+
         //1)add the dialogView to self.view
+        //starting conditions:
+        dialogView.center = CGPoint(x: view.center.x, y: -dialogView.frame.height / 2)
+        
         view.addSubview(dialogView)
+        
+//        UIView.animate(withDuration: 0.4) {
+//
+//        }
+//
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 15, options: [], animations: {
+            
+            sender.transform = CGAffineTransform(rotationAngle: .pi / 4)
+                      //changes are animated:
+                      self.dialogView.center = self.view.center
+            
+         }, completion: nil)
+        
         
         blurView.isHidden = false
         //2)position
-        dialogView.center = view.center
+        
     }
     
     
