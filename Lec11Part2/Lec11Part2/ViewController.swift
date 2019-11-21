@@ -9,7 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+    //weak var x = UIButton() //ref count = 0
+
+    //WeakReference<Context>
+    //VC -> Button
+    //Button -> VC
+    //Retain cycle
     
     @IBAction func showModal(_ sender: UIButton) {
         let sb = UIStoryboard(name: "ModalDialog", bundle: nil)
@@ -59,8 +64,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+ 
     }
 
 
 }
+
+//VC->dialog
 

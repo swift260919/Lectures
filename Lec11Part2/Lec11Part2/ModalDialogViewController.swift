@@ -13,6 +13,14 @@ class ModalDialogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //about screen: clouds moving.
+        //rain
+        
+        //navigation drawer: inner view
+        
+        //modal: Login -> Appdelgate
+        
+        
         //TODO: animate in view did appear
         //factory method - to present
         //showModal(vc, completion)
@@ -20,6 +28,7 @@ class ModalDialogViewController: UIViewController {
         
         //swipe to dismiss
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swiped(_:)))
+        
         swipe.direction = .down
         
         view.addGestureRecognizer(swipe)
